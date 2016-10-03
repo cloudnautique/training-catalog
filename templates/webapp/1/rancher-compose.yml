@@ -1,0 +1,23 @@
+.catalog:
+    name: "MyWebApp"
+    version: "v1-rancher2"
+    description: "My Cool App"
+    questions:
+        - variable: public_port
+          description: "public IP Port for LB"
+          label: "Public Port"
+          required: true
+          default: "80"
+          type: "int"
+myweb-app:
+  scale: 1
+  load_balancer_config:
+    haproxy_config: {}
+  health_check:
+    port: 42
+    interval: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 2000
+nginx-web-tier:
+  scale: 1
