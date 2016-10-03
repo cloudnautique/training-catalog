@@ -1,0 +1,4 @@
+name: mywebapp
+description: "Cool app"
+version: "v1-rancher1"
+category: Webapp
